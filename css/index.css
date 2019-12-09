@@ -1,0 +1,225 @@
+@charset 'UTF-8';
+/* 初始化信息 */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑", serif;
+}
+li {
+  list-style: none;
+}
+html,
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+/* main */
+#all {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  transition: 1s;
+  /* main */
+  /* iframe */
+}
+#all.left {
+  left: -100%;
+}
+#all #main {
+  float: left;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  z-index: 11;
+  background: #023b3b url('../img/bg.png') center;
+  perspective: 800px;
+}
+#all #main #list ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -80px;
+  margin-left: -60px;
+  width: 120px;
+  height: 160px;
+  transform-style: preserve-3d;
+  transform: translateZ(-2000px) rotateX(0deg) rotateY(0deg);
+}
+#all #main #list ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 127, 127, 0.5);
+  border: 1px solid rgba(127, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  text-align: center;
+  color: #fff;
+  cursor: default;
+  transition: 3s cubic-bezier(0.94, 0.02, 0.48, 0.98);
+}
+#all #main #list ul li .cover {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  z-index: 9;
+  width: 122px;
+  height: 162px;
+}
+#all #main #list ul li .title {
+  margin-top: 10px;
+  font-size: 50px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+#all #main #list ul li .author {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+#all #main #list ul li .time {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+#all #main #btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  width: 300px;
+  height: 32px;
+}
+#all #main #btn li {
+  float: left;
+  margin: 0 5px;
+  padding: 0 10px;
+  border: 1px solid #7fffff;
+  color: #7fffff;
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#all #main #btn li:hover {
+  background: rgba(0, 127, 127, 0.8);
+}
+#all #main #alert {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: rgba(0, 127, 127, 0.5);
+  border: 1px solid rgba(127, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  border-radius: 6px;
+  transform: rotateY(0deg) scale(1);
+  opacity: 1;
+  transform-style: preserve-3d;
+}
+#all #main #alert .title,
+#all #main #alert .img,
+#all #main #alert .author,
+#all #main #alert .info {
+  border: 1px solid rgba(127, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+#all #main #alert .title {
+  position: absolute;
+  left: 25%;
+  top: 15%;
+  width: 50%;
+  height: 10%;
+}
+#all #main #alert .title span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+#all #main #alert .img {
+  overflow: hidden;
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  width: 45%;
+  height: 50%;
+}
+#all #main #alert .img img {
+  width: 100%;
+}
+#all #main #alert .author {
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  width: 35%;
+  height: 10%;
+}
+#all #main #alert .author span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+#all #main #alert .info {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 35%;
+  height: 35%;
+}
+#all #main #alert .info span {
+  position: absolute;
+  top: 5%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+#all #main #back {
+  position: absolute;
+  right: -89px;
+  bottom: 20px;
+  z-index: 128;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #7fffff;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #7fffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#all #main #back:hover {
+  background: rgba(0, 127, 127, 0.8);
+}
+#all #frame {
+  overflow: auto;
+  float: left;
+  /* position: relative; */
+  /* right: 0; */
+  /* z-index: 10; */
+  width: 50%;
+  height: 100%;
+}
